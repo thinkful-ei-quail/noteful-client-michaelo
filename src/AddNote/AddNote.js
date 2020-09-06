@@ -15,9 +15,9 @@ export default class AddNote extends Component {
   handleSubmit = e => {
     e.preventDefault()
     const newNote = {
-      name: e.target['note-name'].value,
-      content: e.target['note-content'].value,
-      folderId: e.target['note-folder-id'].value,
+      name: e.target['name'].value,
+      content: e.target['content'].value,
+      folderId: e.target['folderId'].value,
       modified: new Date(),
     }
     fetch(`${config.API_ENDPOINT}/notes`, {

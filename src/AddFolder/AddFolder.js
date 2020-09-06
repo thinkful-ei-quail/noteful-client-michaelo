@@ -15,7 +15,7 @@ export default class AddFolder extends Component {
   handleSubmit = e => {
     e.preventDefault()
     const folder = {
-      name: e.target['folder-name'].value
+      name: e.target['name'].value
     }
     fetch(`${config.API_ENDPOINT}/folders`, {
       method: 'POST',

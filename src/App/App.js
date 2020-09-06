@@ -64,11 +64,15 @@ class App extends Component {
       notes: this.state.notes.filter(note => note.id !== noteId)
     })
   }
+  
+  setNotes = notes => {
+    this.setState({notes})
+  }
 
   renderNavRoutes() {
     return (
       <>
-        {['/', '/folder/:folderId'].map(path =>
+        {['/', '/folders/:folderId'].map(path =>
           <Route
             exact
             key={path}
@@ -77,7 +81,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/note/:noteId'
+          path='/notes/:noteId'
           component={NotePageNav}
         />
         <Route
@@ -95,7 +99,7 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-        {['/', '/folder/:folderId'].map(path =>
+        {['/', '/folders/:folderId'].map(path =>
           <Route
             exact
             key={path}
@@ -104,7 +108,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/note/:noteId'
+          path='/notes/:noteId'
           component={NotePageMain}
         />
         <Route
@@ -126,6 +130,7 @@ class App extends Component {
       addFolder: this.handleAddFolder,
       addNote: this.handleAddNote,
       deleteNote: this.handleDeleteNote,
+      setNotes: this.setNotes
     }
     return (
       <ApiContext.Provider value={value}>
