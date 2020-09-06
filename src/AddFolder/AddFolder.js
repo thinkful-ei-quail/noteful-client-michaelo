@@ -14,9 +14,11 @@ export default class AddFolder extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const folder = {
-      name: e.target['name'].value
-    }
+    
+    
+    const folder = { name: e.target['name'].value }
+    console.log('folder name:', folder)
+    
     fetch(`${config.API_ENDPOINT}/folders`, {
       method: 'POST',
       headers: {
@@ -47,7 +49,7 @@ export default class AddFolder extends Component {
             <label htmlFor='folder-name-input'>
               Name
             </label>
-            <input type='text' id='folder-name-input' name='folder-name' />
+            <input type='text' id='folder-name-input' name='name' />
           </div>
           <div className='buttons'>
             <button type='submit'>
