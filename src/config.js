@@ -1,6 +1,8 @@
 export default {
-  API_ENDPOINT: `http://localhost:8000/api`,
+  API_ENDPOINT: `https://sheltered-beyond-73177.herokuapp.com/`,
   API_KEY: process.env.REACT_APP_API_KEY,
 }
 
-//https://sheltered-beyond-73177.herokuapp.com/`
+
+//http://localhost:8000/api
+
